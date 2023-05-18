@@ -29,9 +29,11 @@ const Developers = () => {
         }
     }
 
+    //this ensures the component renders once after the change of state
+
     useEffect(() => {
         getDevelopers()
-    },[])
+    }, [ ])
 
     console.log(developers);
 

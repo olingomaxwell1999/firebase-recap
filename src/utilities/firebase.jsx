@@ -1,9 +1,11 @@
 
 import { initializeApp } from "firebase/app";
+//important for google monitization
 import { getAnalytics } from "firebase/analytics";
 import {getAuth, GoogleAuthProvider} from 'firebase/auth'
 import {getFirestore} from 'firebase/firestore'
 
+//configurations for working with firebase. In real life projects ensure that you create environment variables for this.
 const firebaseConfig = {
   apiKey: "AIzaSyC-iObrj0laJaHBUmBcOHWJgz64Sn-a-z4",
   authDomain: "class-training-64bc6.firebaseapp.com",
@@ -16,6 +18,7 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 export const analytics = getAnalytics(app);
+//making the authentication, googleprovider and the database available throughout the app 
 export const auth = getAuth(app) 
 export const googleProvider = new GoogleAuthProvider()
 export const db = getFirestore(app)

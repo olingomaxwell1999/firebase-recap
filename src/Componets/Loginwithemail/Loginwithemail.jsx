@@ -4,9 +4,12 @@ import {createUserWithEmailAndPassword, signOut, signInWithEmailAndPassword} fro
 
 const Loginwithemail = () => {
 
+    //states for collecting the input values
+
     const [email,setEmail] = React.useState('')
     const [password,setPassword] = React.useState('')
 
+    //feeding data to our states
     const handleChangeOne = (e) => {
         setEmail(e.target.value)
     }
@@ -14,6 +17,8 @@ const Loginwithemail = () => {
     const handleChangeTwo = (e) => {
         setPassword(e.target.value)
     }
+
+    //handling the creating account functionality
 
     const createAccount = async () => {
         try{
@@ -23,6 +28,8 @@ const Loginwithemail = () => {
         }
     }
 
+    //handling the logging in functionality
+
     const logIn = async () => {
         try{
             await signInWithEmailAndPassword(auth,email,password)
@@ -30,6 +37,8 @@ const Loginwithemail = () => {
             console.error(err.message);
         }
     }
+
+    //handling the logout functionality
 
     const logOut =async () => {
         try{
@@ -39,6 +48,7 @@ const Loginwithemail = () => {
         }
     }
 
+    //checks which user is logged in
     console.log(auth?.currentUser?.email);
 
   return (

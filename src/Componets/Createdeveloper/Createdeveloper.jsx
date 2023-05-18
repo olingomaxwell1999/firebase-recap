@@ -17,6 +17,7 @@ const Createdeveloper = () => {
     const [height, setHeight] = React.useState(0)
     const [residence, setResidence] = React.useState(0)
 
+    //Functions that feed data to ourstates
     const handleName = (e) => {
         setName(e.target.value)
         
@@ -50,6 +51,8 @@ const Createdeveloper = () => {
         setResidence(e.target.value)
     }
 
+    ///Creating a new developer from the dom
+
     const createDeveloper = async () => {
         try{
             await addDoc(developersCollectionRef, {
@@ -62,6 +65,7 @@ const Createdeveloper = () => {
                 height: height,
                 residence: residence
             })
+            
         } catch (err) {
             console.log(err.message)
         }
